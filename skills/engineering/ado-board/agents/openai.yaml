@@ -1,0 +1,3 @@
+interface:
+  display_name: "ADO Board"
+  short_description: "Use an Azure DevOps board as the issue tracker"
