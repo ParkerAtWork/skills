@@ -2,4 +2,4 @@
 "mattpocock-skills": patch
 ---
 
-Add `ado-board`, a model-invoked engineering skill that runs the issue-tracker operations the other skills use (publish, fetch, sub-issues, blocking, triage labels, comments, resolution, wayfinding) against an Azure DevOps board resolved from the shared per-user board-scope cache. `setup-matt-pocock-skills` now offers Azure DevOps as an issue tracker with an `issue-tracker-ado.md` seed.
+Add `ado-board`, a standalone, model-invoked engineering skill for reading and updating the team's Azure DevOps work items. Resolve the board from the user's request or shared per-user board-scope cache, scope operations to that board, and preserve revision guards and human ownership of board columns. Board access does not select or start an implementation workflow and needs no repo tracker configuration. Remove `setup-matt-pocock-skills` from this fork and its plugin listings; references inside the other skills remain unchanged from upstream.

@@ -92,19 +92,15 @@ Re-run both commands to update.
 npx skills@latest add mattpocock/skills -a <agent>  # cursor, opencode, devin, windsurf, amp, pi; omit -a to choose
 ```
 
-When the installer asks which skills to take, include `setup-matt-pocock-skills`. To update, run `npx skills@latest update`, and re-run `add` to pick up new skills.
+To update, run `npx skills@latest update`, and re-run `add` to pick up new skills.
 
 </details>
 
-### 2. Run `/setup-matt-pocock-skills`
+### 2. Use your ADO board
 
-In your agent, run it once per repo. It will:
+Type `/ado-board` or ask your agent to read or update work items on your team's Azure DevOps board. Name the board or its saved alias; the agent asks when the choice is ambiguous.
 
-- Ask you which issue tracker you want to use (GitHub, GitLab, local files, or anything else you describe)
-- Ask you what labels you apply to tickets when you triage them (`/triage` uses labels)
-- Ask you where you want to save any docs we create
-
-### 3. Bam - you're ready to go.
+The team's ADO plugin must provide `ado-access` and `query-ado-work-items`. No repo setup is required for board access. The setup skill is not shipped in this fork; references to it inside the other skills are retained from upstream.
 
 ## Why These Skills Exist
 
@@ -220,7 +216,6 @@ Skills I use daily for code work.
 - **[grill-with-docs](./skills/engineering/grill-with-docs/SKILL.md)**: Grilling session that also builds your project's domain model, sharpening terminology and updating `GLOSSARY.md` and ADRs inline.
 - **[triage](./skills/engineering/triage/SKILL.md)**: Move issues through a state machine of triage roles.
 - **[improve-codebase-architecture](./skills/engineering/improve-codebase-architecture/SKILL.md)**: Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick.
-- **[setup-matt-pocock-skills](./skills/engineering/setup-matt-pocock-skills/SKILL.md)**: Configure this repo for the engineering skills (issue tracker, triage labels, domain doc layout). Run once per repo before using the other engineering skills.
 - **[to-spec](./skills/engineering/to-spec/SKILL.md)**: Turn the current conversation into a spec and publish it to the issue tracker. No interview, just synthesizes what you've already discussed.
 - **[to-tickets](./skills/engineering/to-tickets/SKILL.md)**: Break any plan, spec, or conversation into a set of tracer-bullet tickets, each declaring its blocking edges, written as text in a local file, or as native blocking links on a real tracker.
 - **[implement](./skills/engineering/implement/SKILL.md)**: Build the work described by a spec or set of tickets, driving `/tdd` at pre-agreed seams and closing out with `/code-review` before committing.
@@ -238,7 +233,7 @@ Skills I use daily for code work.
 - **[codebase-design](./skills/engineering/codebase-design/SKILL.md)**: Shared discipline and vocabulary for designing deep modules: a lot of behaviour behind a small interface, placed at a clean seam, testable through that interface.
 - **[code-review](./skills/engineering/code-review/SKILL.md)**: Two-axis review of the diff since a fixed point: **Standards** (does it follow the repo's coding standards, plus a Fowler smell baseline?) and **Spec** (does it faithfully implement the originating issue/spec?), run as parallel sub-agents so neither pollutes the other.
 - **[pr](./skills/engineering/pr/SKILL.md)**: The shape a pull request body should take: a summary as the smallest visual that makes the change clear, before/after evidence that it works, and a merge-danger call (one-way or two-way door, plus blast radius).
-- **[ado-board](./skills/engineering/ado-board/SKILL.md)**: Run the issue-tracker operations the other skills use (publish, fetch, link, label, comment, resolve) against an Azure DevOps board resolved from the shared board-scope cache.
+- **[ado-board](./skills/engineering/ado-board/SKILL.md)**: Read and update the team's Azure DevOps board, resolved from the user or shared board-scope cache, without choosing an implementation workflow.
 - **[wizard](./skills/engineering/wizard/SKILL.md)**: Generate an interactive bash wizard that walks a human through steps only they can perform: provisioning infrastructure, setting up credentials or CI secrets, walking an unfamiliar third-party dashboard, or running a one-off migration or cutover.
 
 ### Productivity

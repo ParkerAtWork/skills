@@ -94,4 +94,4 @@ Off the main flow entirely.
 
 ## Precondition
 
-**`/setup-matt-pocock-skills`**: run before your first engineering flow to configure the issue tracker, triage labels, and doc layout the other skills assume. Custom issue trackers also work. On an Azure DevOps board, pick Azure DevOps there: **`/ado-board`** is the model-invoked adapter that then carries every tracker step in the flows above onto the board, resolved from the shared board-scope cache.
+**`/setup-matt-pocock-skills`**: run before your first engineering flow to configure the issue tracker, triage labels, and doc layout the other skills assume. Custom issue trackers also work.
